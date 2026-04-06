@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-            'password' => 'admin@2026'
+            'password' => 'admin@2026',
         ]);
 
         $categories = collect(['Laravel', 'React', 'Tailwind'])->map(function ($name) {
@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             ]);
         });
         Post::factory(10)->create([
-            'user_id' => $user->id
+            'user_id' => $user->id,
         ]);
     }
 }

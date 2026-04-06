@@ -18,13 +18,14 @@ class PostFactory extends Factory
     public function definition(): array
     {
         $title = $this->faker->sentence();
+
         return [
             'user_id' => 1,
             'category_id' => Category::all()->random()->id,
             'title' => $title,
             'slug' => str($title)->slug(),
             'body' => $this->faker->paragraph(5, true),
-            'published_at' => now()
+            'published_at' => now(),
         ];
     }
 }
